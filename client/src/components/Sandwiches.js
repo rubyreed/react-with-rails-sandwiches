@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Sandwich from "./Sandwich";
+import SandwichForm from "./SandwichForm";
 
 const Sandwiches= () => {
 
@@ -27,6 +28,7 @@ const Sandwiches= () => {
   return(
     <div>
       <h1>Sandwiches</h1>
+      <SandwichForm />
       {renderSandwiches()}
     </div>
   );
