@@ -1,12 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
+import SandwichForm from "./SandwichForm";
 
 const Sandwich = (props) => {
+  const [showForm, setShowForm] = useState(false);
+  const {id, name, price, description, deleteSandwich, updateSandwich} = props
+
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
+
   return (
     <div style = {styles.info}>
-      <p>id: {props.id}</p>
-      <p>name: {props.name}</p>
-      <p>price: {props.price}</p>
-      <p>description: {props.description}</p>
+      <p>id: {id}</p>
+      <p>name: {name}</p>
+      <p>price: {price}</p>
+      <p>description: {description}</p>
+      <button onClick={toggleForm}>
+        {showForm ? "cancel" : "update"}
+        </button>
+      {showForm && <SandwichForm id={id} name={name} price={price} description={description} updateSandwich={updateSandwich}/>}
+      <button onClick={() => deleteSandwich(id)}>Delete This Sandwich</button>
     </div>
   );
 };
