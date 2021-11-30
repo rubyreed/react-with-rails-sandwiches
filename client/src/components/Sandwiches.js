@@ -25,10 +25,14 @@ const Sandwiches= () => {
     });
   };
 
+  const displayNewSandwich = (sandwich) => {
+    setSandwiches([sandwich,...sandwiches])
+  };
+
   return(
     <div>
       <h1>Sandwiches</h1>
-      <SandwichForm />
+      <SandwichForm newestSandwich = {displayNewSandwich}/>
       {renderSandwiches()}
     </div>
   );
