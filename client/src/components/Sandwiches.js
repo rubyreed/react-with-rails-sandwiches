@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Sandwich from "./Sandwich";
-import SandwichForm from "./SandwichForm";
+// import SandwichForm from "./SandwichForm";
 
 const Sandwiches= () => {
   const [sandwiches, setSandwiches]=useState([]);
@@ -38,18 +38,29 @@ const Sandwiches= () => {
     });
   };
 
-  const displayNewSandwich = (sandwich) => {
-    setSandwiches([sandwich,...sandwiches])
-  };
+  // const displayNewSandwich = (sandwich) => {
+  //   setSandwiches([sandwich,...sandwiches])
+  // };
 
 
   return(
     <div>
-      <h1>Sandwiches</h1>
-      <SandwichForm newestSandwich = {displayNewSandwich}/>
+      <h1 style={styles.header}>Sandwich Menu</h1>
+      {/* <SandwichForm newestSandwich = {displayNewSandwich}/> */}
       {renderSandwiches()}
     </div>
   );
+};
+
+const styles = {
+
+  header:{
+    border: "5px solid gray",
+    margin: "5px",
+    padding: "5px",
+    backgroundColor: "purple",
+    color: "white"
+  }
 };
 
 export default Sandwiches;

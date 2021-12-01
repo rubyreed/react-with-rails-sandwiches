@@ -33,7 +33,7 @@ const SandwichForm = (props) => {
         <p>Description:</p>
         <input value = {descriptionState} onChange = {(e) => setDescriptionState(e.target.value)}/>
         <br/>
-        <button>{id ? "Update" : "Create"}</button>
+        <button style={styles.button}>{id ? "Update" : "Create"}</button>
       </form>
   </div>
   );
@@ -43,8 +43,17 @@ const styles = {
   form: {
     border: "3px solid blue",
     margin: "5px",
-    padding: "5px"
-  }
-}
+    padding: "5px",
+    backgroundColor: "lightBlue"
+  },
+
+  button :{
+    backgroundColor: "blue",
+    color: "white",
+    margin: "10px"
+  },
+};
+
+
 
 export default SandwichForm;

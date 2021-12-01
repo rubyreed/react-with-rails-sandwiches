@@ -11,15 +11,15 @@ const Sandwich = (props) => {
 
   return (
     <div style = {styles.info}>
-      <p>id: {id}</p>
-      <p>name: {name}</p>
-      <p>price: {price}</p>
-      <p>description: {description}</p>
+      <p>Sandwich #: {id}</p>
+      <p>Name: {name}</p>
+      <p>Price: {price}</p>
+      <p>Description: {description}</p>
       <button onClick={toggleForm}>
-        {showForm ? "cancel" : "update"}
+        {showForm ? "Cancel" : "Update"}
         </button>
       {showForm && <SandwichForm id={id} name={name} price={price} description={description} updateSandwich={updateSandwich}/>}
-      <button onClick={() => deleteSandwich(id)}>Delete This Sandwich</button>
+      <button onClick={() => deleteSandwich(id)}>Delete</button>
     </div>
   );
 };
@@ -27,9 +27,10 @@ const Sandwich = (props) => {
 
 const styles = {
   info: {
-    border: "3px solid red",
+    border: "3px solid green",
     margin: "5px",
-    padding: "5px"
+    padding: "5px",
+    backgroundColor: "lightGreen"
   }
 }
 
